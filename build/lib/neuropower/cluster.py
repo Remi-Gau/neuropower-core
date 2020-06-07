@@ -24,14 +24,14 @@ def PeakTable(spm,exc,mask):
 	# open peak csv
 	labels = ['x','y','z','peak']
 	peaks = pd.DataFrame(columns=labels)
+	val = None
+	maxval = None
 	# check for each voxel whether it's a peak, if it is, add to table
 	for m in xrange(1,shape[0]+1):
 		for n in xrange(1,shape[1]+1):
 			for o in xrange(1,shape[2]+1):
 				surroundings = None
 				res = None
-				val = None
-				maxval = None
 				if spm_ext[m,n,o]>exc:
 					surroundings=[spm_ext[m-1,n-1,o-1],
 					spm_ext[m-1,n-1,o],

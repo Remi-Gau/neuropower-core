@@ -31,5 +31,4 @@ def peakdens3D(x,k):
     f522sigma = np.array([[3./2., -1./2.],[-1./2.,(2.-k**2.)/2.]])
     fd522,i = stats.mvn.mvnun(f522low,f522up,f522mu,f522sigma)
     fd5 = fd51*(fd521+fd522)
-    out = fd1*(fd2+fd3+fd4+fd5)
-    return out
+    return fd1*(fd2+fd3+fd4+fd5)
